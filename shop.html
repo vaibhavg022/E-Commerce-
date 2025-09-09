@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .cart-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 45%;
+  margin-bottom: 30px;
+}
+
+.cart-item {
+  background: #fafafa;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 15px;
+}
+
+.item-details {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.item-details h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.item-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.quantity {
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.remove,
+.buy-now {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove {
+  background: #e74c3c;
+  margin-left: 10px;
+}
+
+ .checkout{
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+
+ }   
+
+
+  </style>
+</head>
+<body>
+  <h1>Multi-Cart Shopping Page</h1>
+  <div class="container">
+    <!-- Cart 1 -->
+    <div class="cart-section" data-cart-id="1">
+      <h2>Set Cart</h2>
+      <div class="cart-item">
+        <img src="product-1.jpg" alt="Laptop">
+        <div class="item-details">
+          <h4>Tabel Set</h4>
+          <p>Price: ₹<span class="price">2499</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="product-2.jpg" alt="Headphones">
+        <div class="item-details">
+          <h4>Chair</h4>
+          <p>Price: ₹<span class="price">3449</span></p>
+          <input type="number" class="quantity" min="1" value="2">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="product-6.jpg" alt="Laptop">
+        <div class="item-details">
+          <h4>Chair-Table Set</h4>
+          <p>Price: ₹<span class="price">4999</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="product-8.jpg" alt="Laptop">
+        <div class="item-details">
+          <h4>Chair Set</h4>
+          <p>Price: ₹<span class="price">3999</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="summary">
+        <p>Subtotal: ₹<span class="subtotal">0.00</span></p>
+        <p>Total: ₹<span class="total">0.00</span></p>
+        <button class="checkout">Checkout</button>
+      </div>
+    </div>
+
+    <!-- Cart 2 -->
+    <div class="cart-section" data-cart-id="2">
+      <h2>Furniture Cart</h2>
+      <div class="cart-item">
+        <img src="product-3.jpg" alt="Chair">
+        <div class="item-details">
+          <h4>Chair</h4>
+          <p>Price: ₹<span class="price">2499</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="product-4.jpg" alt="Table">
+        <div class="item-details">
+          <h4>Chair</h4>
+          <p>Price: ₹<span class="price">1599</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+      </div>
+      <div class="cart-item">
+        <img src="product-5.jpg" alt="Chair">
+        <div class="item-details">
+          <h4>Chair</h4>
+          <p>Price: ₹<span class="price">1499</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="product-7.jpg" alt="Table">
+        <div class="item-details">
+          <h4>Swinging</h4>
+          <p>Price: ₹<span class="price">1599</span></p>
+          <input type="number" class="quantity" min="1" value="1">
+          <button class="remove">Remove</button>
+          <button class="buy-now"><a href="cart.html">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="summary">
+        <p>Subtotal: ₹<span class="subtotal">0.00</span></p>
+        <p>Total: ₹<span class="total">0.00</span></p>
+        <button class="checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateCart(cartElement) {
+      let subtotal = 0;
+      const items = cartElement.querySelectorAll('.cart-item');
+
+      items.forEach(item => {
+        const price = parseFloat(item.querySelector('.price').textContent);
+        const quantity = parseInt(item.querySelector('.quantity').value);
+        subtotal += price * quantity;
+      });
+
+      cartElement.querySelector('.subtotal').textContent = subtotal.toFixed(2);
+      cartElement.querySelector('.total').textContent = subtotal.toFixed(2);
+    }
+
+    document.querySelectorAll('.cart-section').forEach(cart => {
+      updateCart(cart);
+
+      cart.addEventListener('input', e => {
+        if (e.target.classList.contains('quantity')) {
+          updateCart(cart);
+        }
+      });
+
+      cart.addEventListener('click', e => {
+        if (e.target.classList.contains('remove')) {
+          e.target.closest('.cart-item').remove();
+          updateCart(cart);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

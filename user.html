@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Account Details</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .user-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 350px;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      color: white;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .user-card:hover {
+      transform: scale(1.03);
+    }
+
+    .user-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      margin-bottom: 1rem;
+    }
+
+    .user-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .user-email {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.5rem;
+    }
+
+    .user-joined {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .actions {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-edit {
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .btn-edit:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-logout {
+      background: #ff6b6b;
+      color: white;
+    }
+
+    .btn-logout:hover {
+      background: #ff4c4c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="user-card" id="userCard">
+    <img src="pngtree-avatar-job-student-flat-.png" alt="User Avatar" class="user-avatar">
+    <div class="user-name" id="userName"></div>
+    <div class="user-email" id="userEmail">user@example.com</div>
+    <div class="user-joined" id="userJoinDate">Joined on April 26, 2025</div>
+
+    <div class="actions">
+      <button class="btn btn-edit" onclick="editProfile()">Edit</button>
+      <button class="btn btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    // Example: You could dynamically set these details after login
+    const userData = {
+      name: "vaibhav",
+      email: "user@example.com",
+      joined: new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }),
+      avatar: "pngtree-avatar-job-student-flat-.png"
+    };
+
+    document.getElementById("userName").textContent = userData.name;
+    document.getElementById("userEmail").textContent = userData.email;
+    document.getElementById("userJoinDate").textContent = `Joined on ${userData.joined}`;
+    document.querySelector(".user-avatar").src = userData.avatar;
+
+    function editProfile() {
+      alert("Edit profile clicked!");
+      // Add modal or redirect logic here
+    }
+
+    function logout() {
+      alert("Logging out...");
+      window.location.assign('index.html')
+      // Add logout logic here (like clearing localStorage, redirecting, etc.)
+    }
+  </script>
+
+</body>
+</html>

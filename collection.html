@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Image Slider</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      color: white;
+      overflow: hidden;
+    }
+
+    .main-heading {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 20;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .slider {
+      position: relative;
+      width: 100wh;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slides {
+      position: relative;
+      width: 90%;
+      height: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      z-index: 10;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .slide.active .overlay {
+      opacity: 1;
+    }
+
+    .overlay h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .overlay button {
+      background-color: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 15;
+    }
+
+    .nav.prev { left: 30px; }
+    .nav.next { right: 30px; }
+
+    .dots {
+      position: absolute;
+      bottom: 30px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .dots span {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dots span.active {
+      background-color: #fff;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+</head>
+<body>
+  <!-- Page Heading -->
+  <div class="main-heading">Welcome to the Stunning Image Gallery</div>
+
+  <!-- Slider Container -->
+  <div class="slider">
+    <div class="slides">
+      <!-- Slide 1 -->
+      <div class="slide active" style="background-image: url('p-1.jpg');">
+        <div class="overlay">
+          <h1>Explore Nature</h1>
+          <button>Discover</button>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide" style="background-image: url('P-2.jpg');" >
+        <div class="overlay">
+          <h1>Tech World</h1>
+          <button>Learn More</button>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide" style="background-image: url('P-3.jpg');">
+        <div class="overlay">
+          <h1>Urban Vibes</h1>
+          <button>Join Us</button>
+        </div>
+      </div>
+      <div class="slide active" style="background-image: url('P-4.jpg');">
+        <div class="overlay">
+          <h1>Explore Nature</h1>
+          <button>Discover</button>
+        </div>
+      </div>
+      <div class="slide active" style="background-image: url('P-5.jpg');">
+        <div class="overlay">
+          <h1>Explore Nature</h1>
+          <button>Discover</button>
+        </div>
+      </div>
+      <div class="slide active" style="background-image: url('P-6.jpg');">
+        <div class="overlay">
+          <h1>Explore Nature</h1>
+          <button>Discover</button>
+        </div>
+      </div>
+      <div class="slide active" style="background-image: url('P-7.jpg');">
+        <div class="overlay">
+          <h1>Explore Nature</h1>
+          <button>Discover</button>
+        </div>
+      </div>
+      <div class="slide active" style="background-image: url('P-8.jpg');">
+        <div class="overlay">
+          <h1>Explore Nature</h1>
+          <button>Discover</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="nav prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav next"><i class="fas fa-chevron-right"></i></button>
+
+    <!-- Dot Indicators -->
+    <div class="dots"></div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.dots');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    let index = 0;
+    let timer;
+
+    function createDots() {
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateSlider() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dotsContainer.children[i].classList.remove('active');
+      });
+      slides[index].classList.add('active');
+      dotsContainer.children[index].classList.add('active');
+      gsap.fromTo(slides[index], {opacity: 0, scale: 0.8}, {opacity: 1, scale: 1, duration: 0.8});
+    }
+
+    function goToSlide(i) {
+      index = i;
+      updateSlider();
+      resetTimer();
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    function startTimer() {
+      timer = setInterval(nextSlide, 5000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
+
+    const hammer = new Hammer(document.querySelector('.slider'));
+    hammer.on('swipeleft', nextSlide);
+    hammer.on('swiperight', prevSlide);
+
+    nextBtn.addEventListener('click', () => { nextSlide(); resetTimer(); });
+    prevBtn.addEventListener('click', () => { prevSlide(); resetTimer(); });
+
+    createDots();
+    updateSlider();
+    startTimer();
+  </script>
+</body>
+</html>

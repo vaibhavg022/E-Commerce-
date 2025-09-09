@@ -1,0 +1,606 @@
+.main{
+    height: 100px;
+    width: auto;
+    margin : -10px -10px -10px -10px; 
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #000411, #02043f, #010463);
+    padding: 10px 20px;
+    display: flex;
+}
+
+.main  .nav-links {
+    display: flex;
+    align-items: center;
+}
+.main .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 30px;
+}
+.main .nav-links a:hover{
+    color: aquamarine;
+}
+.main .nav-icons {
+    display: flex;
+    align-items: center;
+}
+.main .nav-icons i {
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.logo{
+  margin-top: 5px;
+  height: 80px;
+  width: 150px;
+}
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box {
+  width: 90%;
+  padding: 12px 50px 12px 50px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-box::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.user-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-icon-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.tooltip {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.user-icon-wrapper:hover .tooltip {
+  opacity: 1;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.search-icon {
+  left: 16px;
+}
+
+.clear-icon {
+  right: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+.search-box:not(:placeholder-shown) + .clear-icon {
+  display: block;
+}
+
+.search-box:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+  .header {
+    margin: 10px 0px -10px 0px ;
+    width: 100%;
+    position: relative;
+    background-image: url('Tires-1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 20px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .header p {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .btn.primary {
+    background-color: #00a86b;
+    color: white;
+  }
+  
+  .btn.primary:hover {
+    background-color: #007c50;
+  }
+  
+  .btn.secondary {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+  }
+  
+  .btn.secondary:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .hero {
+    margin: 10px 0px 0px 0px ;
+    width: 100%;
+    position: relative;
+    background: url('Tires-2.jpg') ;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #00b37a;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #008e5c;
+  }
+  
+  .btn-secondary {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    background-color: white;
+    color: #222;
+  }
+  
+  .stats-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.stats-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-percentage {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.stat-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.stat-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: 0.1;
+    transform: scale(2);
+}
+
+.stat-icon .material-icons {
+    font-size: 3rem;
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .stats-title {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add to styles.css */
+.design-philosophy {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay-2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.content-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.card-icon {
+  margin-bottom: 1.5rem;
+}
+
+.card-icon .material-icons {
+  font-size: 2.5rem;
+  color: #3498db;
+  animation: float 3s ease-in-out infinite;
+}
+
+.philosophy-card h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.philosophy-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.card-decoration {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background: #3498db;
+  opacity: 0.1;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+      font-size: 2rem;
+  }
+  
+  .philosophy-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .content-wrapper {
+      padding: 2rem 1rem;
+  }
+}
+
+/* Hover Effects */
+.philosophy-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.philosophy-card:hover .card-icon .material-icons {
+  color: #2980b9;
+}
+.support-footer {
+  background: linear-gradient(135deg, #00bcd4, #2196f3);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  animation: slideUp 1s ease-out;
+}
+
+.support-footer h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.support-footer p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+.contact-links a {
+  display: block;
+  margin: 5px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+  color: #e0f7fa;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+  transform: scale(1.2);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

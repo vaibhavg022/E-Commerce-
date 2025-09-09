@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm">
+          <h2>Login</h2>
+          <div class="form-group">
+            <input type="email" id="loginEmail" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" id="loginPassword" placeholder="Password" required />
+          </div>
+          <button class="btn" onclick="handleLogin()">Login</button>
+          <p class="toggle-link">Don't have an account? <a onclick="toggleForms()">Sign Up</a></p>
+          <p class="message" id="loginMessage"></p>
+        </div>
+    
+        <div id="signupForm" class="hidden">
+          <h2>Sign Up</h2>
+          <div class="form-group">
+            <input type="text" id="signupName" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" id="signupEmail" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" id="signupPassword" placeholder="Password" required />
+          </div>
+          <button class="btn" onclick="handleSignup()">Sign Up</button>
+          <p class="toggle-link">Already have an account? <a onclick="toggleForms()">Login</a></p>
+          <p class="message" id="signupMessage"></p>
+        </div>
+      </div>
+    
+  <script src="sign.js"></script>
+</body>
+</html>

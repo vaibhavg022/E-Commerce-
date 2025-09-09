@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="pratice.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="container-header">
+      <h1>Business Dashboard</h1>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="dashboard-grid">
+
+      <!-- Cost Summary Chart Card -->
+      <div class="card">
+        <h2>Cost Summary</h2>
+        <div class="chart-container">
+          <canvas id="costSummaryChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Margins Chart Card -->
+      <div class="card">
+        <h2>Profit Margins</h2>
+        <div class="chart-container">
+          <canvas id="marginsChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Table Card -->
+      <div class="card">
+        <h2>Data Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Item</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Example Item 1</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Example Item 2</td>
+              <td>Inactive</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="pratice.js"></script>
+</body>
+</html>
